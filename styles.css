@@ -3,15 +3,25 @@ h1 {
 }
 
 ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color:rgb(30, 22, 18);
   }
   
   li {
     float: left;
+  }
+
+  body div  {
+    padding:20px;
+    margin-top:30px;
+    background-color: rgb(248, 182,25);
+    height:1500px;
   }
   
   li a {
