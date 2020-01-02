@@ -1,0 +1,23 @@
+{
+  "name": "username.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/styles.css -o public/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamohamed2/username.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mamohamed2/username.github.io/issues"
+  },
+  "homepage": "https://github.com/mamohamed2/username.github.io#readme",
+  "dependencies": {
+    "tailwindcss": "^1.1.4"
+  }
+}
