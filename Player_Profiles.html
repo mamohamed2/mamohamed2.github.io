@@ -1,44 +1,84 @@
 <!DOCTYPE html>
 <html>
+    <script src="https://unpkg.com/vue@next/dist/vue.js"></script>
     <head>
         <meta charset="UTF-8">
 
         <title>EAYBL</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body class="bg-yellow-400" >
-
-        <header class ="bg-black text-white py-4 px-4">
-            <div class  = "container flex items-center justify-between mx-auto px-4">
-                <h1 class = "text-2xl"> 
-                    <a href="index.html">
+   
+    <body class="bg-yellow-400" > 
+        <!-- Container for header, navbar -->
+        <!-- <header class ="lg:bg-black text-white py-6 px-6 sm:hidden">
+            <div class  = "lg:container flex items-center justify-between mx-auto px-4">
+                <h1 class = "lg:text-2xl"> 
+                    <a href="lg:index.html">
                         <img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> 
                     </a>
                 </h1>
-                    <ul class =  "flex items-centered list-reset text-xl">
-                        <li class = "ml-4">
+                    <ul class =  "lg:flex items-centered list-reset text-xl">
+                        <li class = "lg:ml-4">
                             <a class="no-underline text-white  hover:text-yellow-400" href="About_Us.html">About Us</a>
                         </li>
-                        <li class = "ml-4">
+                        <li class = "lg:ml-4">
                             <a class="no-underline text-white  hover:text-yellow-400" href="League_Rules.html">League Rules</a>
                         </li>
-                        <li class = "ml-4">
+                        <li class = "lg:ml-4">
                             <a class="no-underline text-white  hover:text-yellow-400" href="Season_Schedule.html">Season Schedule and Calendar</a>
                         </li>
-                        <li class = "ml-4">
+                        <li class = "lg:ml-4">
                             <a class="no-underline text-white  hover:text-yellow-400" href="Photo_Gallery.html">Photo Gallery</a>
                         </li>
-                        <li class = "ml-4">
+                        <li class = "lg:ml-4">
                             <a class="no-underline text-white  hover:text-yellow-400" href="EAYBL_Stats.html">EAYBL Stats</a>
                         </li>
-                        <li class = "ml-4">
+                        <li class = "lg:ml-4">
                             <a class="no-underline text-white  hover:text-yellow-400" href="Player_Profiles.html">Player Profiles</a>
                         </li>
-
                     </ul>
+ 
             </div> 
-           
-        </header>
+
+        </header> -->
+        
+        <div class="bg-yellow-400">
+
+            <nav class= " sticky top-0 bg-black px-6 py-4 shadow-lg">
+
+                <div class="flex items-center justify-end">
+
+                    
+                    <button type="button" onclick="sideBar(this)" class="block text-white hover:text-yellow-400 focus:text-white focus:outline-none lg:hidden">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </button>
+                    <!-- Navbar when the screen is big -->
+
+                    <div class="hidden lg:flex items-center text-lg text-white h-full">
+                        <a href="lg:index.html"><img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
+                        <a href="About_Us.html" class="px-6 hover:text-yellow-400 rounded py-1">About Us</a>
+                        <a href="League_Rules.html" class="px-6 hover:text-yellow-400 rounded py-1">League Rules</a>
+                        <a href="Season_Schedule.html" class="px-6 hover:text-yellow-400 rounded py-1">Season Schedule</a>
+                        <a href="Photo_Gallery.html" class="px-6 hover:text-yellow-400 rounded py-1">Photo Gallery</a>
+                        <a href="EAYBL_Stats.html" class="px-6 hover:text-yellow-400 rounded py-1">EAYBL Stats</a>
+                        <a href="Player_Profiles.html" class="px-6 hover:text-yellow-400 rounded py-1">Player Profiles</a>
+                    </div>
+
+                </div>
+                <span class="flex flex-col justify-end absolute text-lg text-white p-3 bg-black shadow-lg hidden" id="sidenav">
+                    <a href="About_Us.html" class="px-2 py-1 font-bold hover:bg-yellow-400">About Us</a>
+                    <a href="League_Rules.html" class="px-2 py-1 hover:bg-yellow-400">League Rules</a>
+                    <a href="Season_Schedule.html" class="px-2 py-1 hover:bg-yellow-400">Season Schedule</a>
+                    <a href="Photo_Gallery.html" class="px-2 py-1 hover:bg-yellow-400">Photo Gallery</a>
+                    <a href="EAYBL_Stats.html" class="px-2 py-1 hover:bg-yellow-400">EAYBL Stats</a>
+                    <a href="Player_Profiles.html" class="px-2 py-1 hover:bg-yellow-400">Player Profiles</a>
+                </span>
+            </nav>
+
+        
+ 
 
 
 
@@ -46,9 +86,34 @@
             Hello World!
         </h2>
 
-        <div class="font-sans text-xl text-black text-center">
+        <p class="font-sans text-xl text-black text-center">
             These pages are currently in construction. Be patient!!!
-        </div>
+        </p>
+
+    </div>
 
     </body>
 </html>
+
+<script type="text/javascript">
+    function sideBar(e) {
+        const x = document.getElementById("sidenav");
+        const y = document.getElementById("hideOnOpen");
+        if (x.classList.contains("hidden")) {
+            x.classList.remove("hidden");
+            x.classList.add("block");
+            x.style.transition = "height 2s";
+            y.classList.add("hidden");
+            y.classList.remove("block");
+            e.classList.add("focus:text-white");
+            e.classList.remove("focus:text-yellow-400");
+        } else {
+            x.classList.remove("block");
+            x.classList.add("hidden");
+            y.classList.add("block");
+            y.classList.remove("hidden");
+            e.classList.remove("focus:text-white");
+            e.classList.add("focus:text-yellow-400");
+        }
+    }
+</script>
