@@ -9,45 +9,14 @@
     </head>
    
     <body class="bg-yellow-400" > 
-        <!-- Container for header, navbar -->
-        <!-- <header class ="lg:bg-black text-white py-6 px-6 sm:hidden">
-            <div class  = "lg:container flex items-center justify-between mx-auto px-4">
-                <h1 class = "lg:text-2xl"> 
-                    <a href="lg:index.html">
-                        <img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> 
-                    </a>
-                </h1>
-                    <ul class =  "lg:flex items-centered list-reset text-xl">
-                        <li class = "lg:ml-4">
-                            <a class="no-underline text-white  hover:text-yellow-400" href="About_Us.html">About Us</a>
-                        </li>
-                        <li class = "lg:ml-4">
-                            <a class="no-underline text-white  hover:text-yellow-400" href="League_Rules.html">League Rules</a>
-                        </li>
-                        <li class = "lg:ml-4">
-                            <a class="no-underline text-white  hover:text-yellow-400" href="Season_Schedule.html">Season Schedule and Calendar</a>
-                        </li>
-                        <li class = "lg:ml-4">
-                            <a class="no-underline text-white  hover:text-yellow-400" href="Photo_Gallery.html">Photo Gallery</a>
-                        </li>
-                        <li class = "lg:ml-4">
-                            <a class="no-underline text-white  hover:text-yellow-400" href="EAYBL_Stats.html">EAYBL Stats</a>
-                        </li>
-                        <li class = "lg:ml-4">
-                            <a class="no-underline text-white  hover:text-yellow-400" href="Player_Profiles.html">Player Profiles</a>
-                        </li>
-                    </ul>
- 
-            </div> 
-
-        </header> -->
         
         <div class="bg-yellow-400">
 
             <nav class= " sticky top-0 bg-black px-6 py-4 shadow-lg">
 
-                <div class="flex items-center justify-end">
+                <div class="flex items-center justify-between">
 
+                    <a href="lg:index.html"><img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
                     
                     <button type="button" onclick="sideBar(this)" class="block text-white hover:text-yellow-400 focus:text-white focus:outline-none lg:hidden">
                         <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -57,7 +26,7 @@
                     <!-- Navbar when the screen is big -->
 
                     <div class="hidden lg:flex items-center text-lg text-white h-full">
-                        <a href="lg:index.html"><img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
+                        
                         <a href="About_Us.html" class="px-6 hover:text-yellow-400 rounded py-1">About Us</a>
                         <a href="League_Rules.html" class="px-6 hover:text-yellow-400 rounded py-1">League Rules</a>
                         <a href="Season_Schedule.html" class="px-6 hover:text-yellow-400 rounded py-1">Season Schedule</a>
@@ -67,6 +36,8 @@
                     </div>
 
                 </div>
+
+                <!-- Navbar when screen is small -->
                 <span class="flex flex-col justify-end absolute text-lg text-white p-3 bg-black shadow-lg hidden" id="sidenav">
                     <a href="About_Us.html" class="px-2 py-1 font-bold hover:bg-yellow-400">About Us</a>
                     <a href="League_Rules.html" class="px-2 py-1 hover:bg-yellow-400">League Rules</a>
