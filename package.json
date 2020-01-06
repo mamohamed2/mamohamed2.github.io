@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mamohamed2/username.github.io#readme",
   "dependencies": {
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.1.4",
+    "vue": "^2.6.11"
   }
 }
