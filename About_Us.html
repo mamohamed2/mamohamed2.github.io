@@ -13,10 +13,11 @@
         <div class="bg-yellow-400">
 
             <nav class= " sticky top-0 bg-black px-6 py-4 shadow-lg">
-                <!-- Entire Nav Bar -->
-                <div class="flex items-center justify-end">
 
-                   
+                <div class="flex items-center justify-between">
+
+                    <a href="index.html"><img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
+                    
                     <button type="button" onclick="sideBar(this)" class="block text-white hover:text-yellow-400 focus:text-white focus:outline-none lg:hidden">
                         <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
@@ -25,7 +26,7 @@
                     <!-- Navbar when the screen is big -->
 
                     <div class="hidden lg:flex items-center text-lg text-white h-full">
-                        <a href="lg:index.html"><img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
+                        
                         <a href="About_Us.html" class="px-6 hover:text-yellow-400 rounded py-1">About Us</a>
                         <a href="League_Rules.html" class="px-6 hover:text-yellow-400 rounded py-1">League Rules</a>
                         <a href="Season_Schedule.html" class="px-6 hover:text-yellow-400 rounded py-1">Season Schedule</a>
@@ -35,8 +36,9 @@
                     </div>
 
                 </div>
-                <span class="flex flex-col justify-end absolute text-lg text-white p-3 bg-black  shadow-lg hidden" id="sidenav">
-                    <!-- Navbar when screen is small -->
+
+                <!-- Navbar when screen is small -->
+                <span class="flex flex-col justify-end absolute text-lg text-white p-3 bg-black shadow-lg hidden" id="sidenav">
                     <a href="About_Us.html" class="px-2 py-1 font-bold hover:bg-yellow-400">About Us</a>
                     <a href="League_Rules.html" class="px-2 py-1 hover:bg-yellow-400">League Rules</a>
                     <a href="Season_Schedule.html" class="px-2 py-1 hover:bg-yellow-400">Season Schedule</a>
