@@ -2,6 +2,72 @@
 <html>
     <script src="https://unpkg.com/vue@next/dist/vue.js"></script>
     <head>
+
+        <style>
+            /* Tab content - closed */
+            .tab-content {
+            max-height: 0;
+            -webkit-transition: max-height .35s;
+            -o-transition: max-height .35s;
+            transition: max-height .35s;
+            }
+            /* :checked - resize to full height */
+            .tab input:checked ~ .tab-content {
+            max-height: 100vh;
+            }
+            /* Label formatting when open */
+            .tab input:checked + label{
+            /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
+            font-size: 1.25rem; /*.text-xl*/
+            padding: 1.25rem; /*.p-5*/
+            border-left-width: 2px; /*.border-l-2*/
+            border-color: #f6e05e; /*.border-indigo*/
+            background-color: #f6e05e; /*.bg-gray-100 */
+            color: #000000; /*.text-indigo*/
+            }
+            /* Icon */
+            .tab label::after {
+            float:right;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            line-height: 1.5;
+            font-size: 1.25rem;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+            }
+            /* Icon formatting - closed */
+            .tab input[type=checkbox] + label::after {
+            content: "+";
+            font-weight:bold; /*.font-bold*/
+            border-width: 1px; /*.border*/
+            border-radius: 9999px; /*.rounded-full */
+            border-color: #b8c2cc; /*.border-grey*/
+            }
+            .tab input[type=radio] + label::after {
+            content: "\25BE";
+            font-weight:bold; /*.font-bold*/
+            border-width: 1px; /*.border*/
+            border-radius: 9999px; /*.rounded-full */
+            border-color: #f6e05e; /*.border-grey*/
+            }
+            /* Icon formatting - open */
+            .tab input[type=checkbox]:checked + label::after {
+            transform: rotate(315deg);
+            background-color: #6574cd; /*.bg-indigo*/
+            color: #f8fafc; /*.text-grey-lightest*/
+            }
+            .tab input[type=radio]:checked + label::after {
+            transform: rotateX(180deg);
+            background-color: #f6e05e; /*.bg-indigo*/
+            color: #f8fafc; /*.text-grey-lightest*/
+            }
+         </style>
+         
         <meta charset="UTF-8">
 
         <title>EAYBL</title>
@@ -52,66 +118,69 @@
             </nav>
 
 
-
-        <div class=" container flex flex-col flex-wrap justify-center max-w-md m-auto my-10 fade-in px-2">
-            <!-- Bar used to make accordion -->
-            <div class="rounded-t overflow-hidden shadow-md w-full bg-yellow-400">
-                <div class=" accordion-title-row flex justify-between items-center cursor-pointer hover:bg-grey-200 px-6 py-4">
-                    <div class="flex">
-                        <h2 class=" font-bold text-lg md-0">Team One</h2>
-                    </div>
-                    <div>
-                        <svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"><title>cheveron down</title><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
-                     </div>
+        <div class="w-full md:w-3/5 mx-auto p-8">
+            <!-- Menu of where all the teams are -->
+            <h1 class="font-sans text-3xl text-black text-center">EAYBL Teams</h1>
+            <div class="shadow-md">
+               <div class="tab w-full overflow-hidden border-t">
+                  <input class="absolute opacity-0" id="tab-single-one" type="radio" name="tabs2">
+                  <label class="block p-5 leading-normal cursor-pointer" for="tab-single-one">Team One</label>
+                  <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
+                     <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                  </div>
+               </div>
+               <div class="tab w-full overflow-hidden border-t">
+                  <input class="absolute opacity-0" id="tab-single-two" type="radio" name="tabs2">
+                  <label class="block p-5 leading-normal cursor-pointer" for="tab-single-two">Team Two</label>
+                  <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
+                     <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                  </div>
+               </div>
+               <div class="tab w-full overflow-hidden border-t">
+                  <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                  <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Three</label>
+                  <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                     <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                  </div>
+               </div>
+               <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Four</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                   <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
+             </div>
 
-                <ul class="accordion-content list-reset leading-normal px-8 py-4 bg-grey-lighter hidden">
-                    <li class="py-2 border-b">Player One</li>
-                    <li class="py-2 border-b">Player Two</li>
-                    <li class="py-2 border-b">Player Three</li>
-                    <li class="py-2 border-b">Player Four</li>
-                </ul>
-            </div>
-
-            <div class="rounded-t overflow-hidden shadow-md w-full bg-yellow-400">
-                <div class=" accordion-title-row flex justify-between items-center cursor-pointer hover:bg-grey-200 px-6 py-4">
-                    <div class="flex">
-                        <h2 class=" font-bold text-lg md-0">Team Two</h2>
-                    </div>
-                    <div>
-                        <svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"><title>cheveron down</title><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
-                     </div>
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Five</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                   <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
-
-                <ul class="accordion-content list-reset leading-normal px-8 py-4 bg-grey-lighter hidden">
-                    <li class="py-2 border-b">Player One</li>
-                    <li class="py-2 border-b">Player Two</li>
-                    <li class="py-2 border-b">Player Three</li>
-                    <li class="py-2 border-b">Player Four</li>
-                </ul>
-            </div>
-
-            <div class="rounded-t overflow-hidden shadow-md w-full bg-yellow-400">
-                <div class=" accordion-title-row flex justify-between items-center cursor-pointer hover:bg-grey-200 px-6 py-4">
-                    <div class="flex">
-                        <h2 class=" font-bold text-lg md-0">Team Three</h2>
-                    </div>
-                    <div>
-                        <svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"><title>cheveron down</title><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
-                     </div>
+             </div>
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Six</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                   <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
-
-                <ul class="accordion-content list-reset leading-normal px-8 py-4 bg-grey-lighter hidden">
-                    <li class="py-2 border-b">Player One</li>
-                    <li class="py-2 border-b">Player Two</li>
-                    <li class="py-2 border-b">Player Three</li>
-                    <li class="py-2 border-b">Player Four</li>
-                </ul>
+             </div>
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Seven</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                   <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                </div>
+             </div>
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Eight</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                   <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                </div>
+             </div>
             </div>
-
-        </div>
-            
-
+         </div>
             
 
             
@@ -157,49 +226,20 @@
         }
     }
 
-    const accordionItems = document.querySelectorAll('.accordion-item');
-    const accordionContentPanes = document.querySelectorAll('accordion-content');
+    var myRadios = document.getElementsByName('tabs2');
+      var setCheck;
+      var x = 0;
+      for(x = 0; x < myRadios.length; x++){
+          myRadios[x].onclick = function(){
+              if(setCheck != this){
+                   setCheck = this;
+              }else{
+                  this.checked = false;
+                  setCheck = null;
+          }
+          };
+      }
 
-    // Show first by default
-    accordionItems[0].querySelector('.accordion-content').classList.remove('hidden');
 
-    // Hide each one except for the one selected
-
-    accordionItems.forEach(function(accordion) {
-        // clicked accordions, clickable targets
-
-        const accordionTitleRow = accordion.firstElementChild;
-
-        accordionTitleRow.addEventListener('click', toggleAccordion);
-
-    });
-
-    function toggleAccordion(e) {
-
-        accordionContentPanes.forEach(function(content) {
-
-            if (content.previousElementSibling === e.target) {
-                removeClass(content,'hidden');
-                addClass(content.parentElement, 'active');
-            } else {
-                removeClass(content.parentElement, 'active');
-                addClass(content,'hidden');
-            }
-
-        });
-
-    }
-
-    function addClass(el, klass) {
-
-        el.classList.add(klass);
-
-    }
-
-    function removeClass(el, klass) {
-
-        el.classList.remove(klass);
-
-    }
 
 </script>
