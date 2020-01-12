@@ -46,7 +46,7 @@
             font-weight:bold; /*.font-bold*/
             border-width: 1px; /*.border*/
             border-radius: 9999px; /*.rounded-full */
-            border-color: #b8c2cc; /*.border-grey*/
+            border-color: #f6e05e; /*.border-grey*/
             }
             .tab input[type=radio] + label::after {
             content: "\25BE";
@@ -58,7 +58,7 @@
             /* Icon formatting - open */
             .tab input[type=checkbox]:checked + label::after {
             transform: rotate(315deg);
-            background-color: #6574cd; /*.bg-indigo*/
+            background-color: #f6e05e; /*.bg-indigo*/
             color: #f8fafc; /*.text-grey-lightest*/
             }
             .tab input[type=radio]:checked + label::after {
@@ -124,13 +124,25 @@
             <div class="shadow-md">
                <div class="tab w-full overflow-hidden border-t">
                   <input class="absolute opacity-0" id="tab-single-one" type="radio" name="tabs2">
+                  <!-- Team One -->
                   <label class="block p-5 leading-normal cursor-pointer" for="tab-single-one">Team One</label>
                   <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
-                     <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                     <ul class="list-disc list-inside p-5 ">
+                        <li>This person</li>
+                        <li>That Person</li>
+                        <li>How about this person?</li>
+
+                        <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                        
+                        <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+
+                     </ul>
+
                   </div>
                </div>
                <div class="tab w-full overflow-hidden border-t">
                   <input class="absolute opacity-0" id="tab-single-two" type="radio" name="tabs2">
+                  <!-- Team Two -->
                   <label class="block p-5 leading-normal cursor-pointer" for="tab-single-two">Team Two</label>
                   <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
                      <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
@@ -138,65 +150,55 @@
                </div>
                <div class="tab w-full overflow-hidden border-t">
                   <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                  <!-- Team Three -->
                   <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Three</label>
-                  <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                  <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
                      <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                   </div>
                </div>
                <div class="tab w-full overflow-hidden border-t">
-                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
-                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Four</label>
-                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                <input class="absolute opacity-0" id="tab-single-four" type="radio" name="tabs2">
+                <!-- Team Four -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-four">Team Four</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
                    <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
              </div>
 
              <div class="tab w-full overflow-hidden border-t">
-                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
-                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Five</label>
-                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                <input class="absolute opacity-0" id="tab-single-five" type="radio" name="tabs2">
+                <!-- Team Five -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-five">Team Five</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
                    <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
              </div>
              <div class="tab w-full overflow-hidden border-t">
-                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
-                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Six</label>
-                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                <input class="absolute opacity-0" id="tab-single-six" type="radio" name="tabs2">
+                <!-- Team Six -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-six">Team Six</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
                    <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
              </div>
              <div class="tab w-full overflow-hidden border-t">
-                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
-                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Seven</label>
-                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                <input class="absolute opacity-0" id="tab-single-seven" type="radio" name="tabs2">
+                <!-- Team Seven -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-seven">Team Seven</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
                    <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
              </div>
              <div class="tab w-full overflow-hidden border-t">
-                <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
-                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Eight</label>
-                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-blackß leading-normal">
+                <input class="absolute opacity-0" id="tab-single-eight" type="radio" name="tabs2">
+                <!-- Team Eight -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-eight">Team Eight</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-black leading-normal">
                    <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                 </div>
              </div>
             </div>
          </div>
-            
-
-            
-
-        
-
-        
-        
-
-        <h2 class="font-sans text-3xl text-black text-center">
-            Hello World!
-        </h2>
-
-        <p class="font-sans text-xl text-black text-center">
-            These pages are currently in construction. Be patient!!!
-        </p>
 
 
     </div>
