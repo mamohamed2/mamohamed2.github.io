@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EAYBL</title>
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+   
+    <body class="bg-yellow-400" > 
+        
+        <div class="bg-yellow-400">
+
+            <nav class= " relative top-0 bg-black px-6 py-4 shadow-lg" id="navbar">
+
+                <div class="flex items-center justify-between">
+
+                    <a href="../index.html"><img src="../img/FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
+                    
+                    <button type="button" onclick="sideBar(this)" class="block text-white hover:text-yellow-400 focus:text-white focus:outline-none lg:hidden">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </button>
+                    <!-- Navbar when the screen is big -->
+
+                    <div class="hidden lg:flex items-center text-lg text-white h-full z-10">
+                        <a href="../rules/" class="px-6 hover:text-yellow-400 rounded py-1">League Rules</a>
+                        <a href="../schedule/" class="px-6 hover:text-yellow-400 rounded py-1">Season Schedule</a>
+                        <a href="../gallery/" class="px-6 hover:text-yellow-400 rounded py-1">Photo Gallery</a>
+                        <a href="../statistics/" class="px-6 hover:text-yellow-400 rounded py-1">EAYBL Stats</a>
+                        <a href="../players/" class="px-6 hover:text-yellow-400 rounded py-1">Player Profiles</a>
+                        <a href="../contact/" class="px-6 hover:text-yellow-400 rounded py-1">Contact Us</a>
+                    </div>
+
+                </div>
+
+                <!-- Navbar when screen is small -->
+                <span class="flex flex-col justify-end absolute text-lg text-white p-3 bg-black shadow-lg hidden" id="sidenav">
+                    <a href="../rules/" class="px-2 py-1 hover:bg-yellow-400">League Rules</a>
+                    <a href="../schedule/" class="px-2 py-1 hover:bg-yellow-400">Season Schedule</a>
+                    <a href="../gallery/" class="px-2 py-1 hover:bg-yellow-400">Photo Gallery</a>
+                    <a href="../statistics/" class="px-2 py-1 hover:bg-yellow-400">EAYBL Stats</a>
+                    <a href="../players/" class="px-2 py-1 hover:bg-yellow-400">Player Profiles</a>
+                    <a href="../contact/" class="px-2 py-1 font-bold hover:bg-yellow-400">Contact Us</a>
+                </span>
+            </nav>
+
+            
+            <div class="slideshow-container m-auto sticky max-w-5xl ">
+
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 9</div>
+                  <img src="../img/006_20a.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 9</div>
+                  <img src="../img/007_19a.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 9</div>
+                  <img src="../img/018_08a (2).jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 9</div>
+                    <img src="../img/022_04a.jpg" style="width:100%">
+                  </div>
+                  
+                  
+                  <div class="mySlides fade">
+                    <div class="numbertext">5 / 9</div>
+                    <img src="../img/IMG_6827.jpg" style="width:100%">
+                  </div>
+
+                  <div class="mySlides fade">
+                    <div class="numbertext">6 / 9</div>
+                    <img src="../img/IMG_6833.jpg" style="width:100%">
+                  </div>
+
+                  <div class="mySlides fade">
+                    <div class="numbertext">8 / 9</div>
+                    <img src="../img/IMG_6835.jpg" style="width:100%">
+                  </div>
+
+                  <div class="mySlides fade">
+                    <div class="numbertext">9 / 9</div>
+                    <img src="../img/IMG_7572.jpg" style="width:100%">
+                  </div>
+
+
+
+                
+                <a class="prev cursor-pointer absolute w-auto p-5 text-lg font-bold hover:bg-black" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next cursor-pointer absolute w-auto p-5 text-lg font-bold hover:bg-black" onclick="plusSlides(1)">&#10095;</a>
+                
+                </div>
+            
+            
+        
+ 
+
+    </div>
+
+    </body>
+</html>
+
+<script type="text/javascript" src="../js/dropdown.js"></script>
+<script type="text/javascript">
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  
+  slides[slideIndex-1].style.display = "block";  
+  
+}
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>

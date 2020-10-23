@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <script src="https://unpkg.com/vue@next/dist/vue.js"></script>
     <head>
         <meta charset="UTF-8">
-
         <title>EAYBL</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="FullSizeRender.jpg" type="image/gif" sizes="16x16">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" href="img/FullSizeRender.jpg" type="image/gif" sizes="16x16">
     </head>
-   
     <body class="bg-yellow-400"> 
 
 
@@ -17,7 +14,7 @@
 
                 <div class="flex items-center justify-between">
 
-                    <a href="index.html"><img src="FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
+                    <a href="index.html"><img src="img/FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
                     
                     <button type="button" onclick="sideBar(this)" class="block text-white hover:text-yellow-400 focus:text-white focus:outline-none lg:hidden">
                         <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -27,12 +24,12 @@
                     <!-- Navbar when the screen is big -->
 
                     <div class="hidden lg:flex items-center text-lg text-white h-full">
-                        <a href="League_Rules.html" class="px-6 hover:text-yellow-400 rounded py-1">League Rules</a>
-                        <a href="Season_Schedule.html" class="px-6 hover:text-yellow-400 rounded py-1">Season Schedule</a>
-                        <a href="Photo_Gallery.html" class="px-6 hover:text-yellow-400 rounded py-1">Photo Gallery</a>
-                        <a href="EAYBL_Stats.html" class="px-6 hover:text-yellow-400 rounded py-1">EAYBL Stats</a>
-                        <a href="Player_Profiles.html" class="px-6 hover:text-yellow-400 rounded py-1">Player Profiles</a>
-                        <a href="Contact.html" class="px-6 hover:text-yellow-400 rounded py-1">Contact</a>
+                        <a href="rules/" class="px-6 hover:text-yellow-400 rounded py-1">League Rules</a>
+                        <a href="schedule/" class="px-6 hover:text-yellow-400 rounded py-1">Season Schedule</a>
+                        <a href="gallery/" class="px-6 hover:text-yellow-400 rounded py-1">Photo Gallery</a>
+                        <a href="statistics/" class="px-6 hover:text-yellow-400 rounded py-1">EAYBL Stats</a>
+                        <a href="players/" class="px-6 hover:text-yellow-400 rounded py-1">Player Profiles</a>
+                        <a href="contact/" class="px-6 hover:text-yellow-400 rounded py-1">Contact</a>
                     </div>
 
                     
@@ -41,19 +38,19 @@
 
                 <!-- Navbar when screen is small -->
                 <span class="flex flex-end flex-col object-right absolute text-3xl text-white p-10 bg-black shadow-lg hidden" id="sidenav">
-                    <a href="League_Rules.html" class="px-2 py-1 hover:bg-yellow-400">League Rules</a>
-                    <a href="Season_Schedule.html" class="px-2 py-1 hover:bg-yellow-400">Season Schedule</a>
-                    <a href="Photo_Gallery.html" class="px-2 py-1 hover:bg-yellow-400">Photo Gallery</a>
-                    <a href="EAYBL_Stats.html" class="px-2 py-1 hover:bg-yellow-400">EAYBL Stats</a>
-                    <a href="Player_Profiles.html" class="px-2 py-1 hover:bg-yellow-400">Player Profiles</a>
-                    <a href="Contact.html" class="px-2 py-1 font-bold hover:bg-yellow-400">Contact</a>
+                    <a href="rules/" class="px-2 py-1 hover:bg-yellow-400">League Rules</a>
+                    <a href="schedule/" class="px-2 py-1 hover:bg-yellow-400">Season Schedule</a>
+                    <a href="gallery/" class="px-2 py-1 hover:bg-yellow-400">Photo Gallery</a>
+                    <a href="statistics/" class="px-2 py-1 hover:bg-yellow-400">EAYBL Stats</a>
+                    <a href="players/" class="px-2 py-1 hover:bg-yellow-400">Player Profiles</a>
+                    <a href="contact/" class="px-2 py-1 font-bold hover:bg-yellow-400">Contact</a>
                 </span>
             </nav>
 
             <!-- Picture for the EAYBL front page -->
         <div class="bg-yellow-400">
 
-            <img class="h-full w-full object-cover" : src="Front_Picture.jpg" : alt="Basketball Players">
+            <img class="h-full w-full object-cover" : src="../img/Front_Picture.jpg" : alt="Basketball Players">
 
        </div>
 
@@ -77,25 +74,5 @@
     
 </html>
 
-<script type="text/javascript">
-    function sideBar(e) {
-        const x = document.getElementById("sidenav");
-        const y = document.getElementById("hideOnOpen");
-        if (x.classList.contains("hidden")) {
-            x.classList.remove("hidden");
-            x.classList.add("block");
-            x.style.transition = "height 2s";
-            y.classList.add("hidden");
-            y.classList.remove("block");
-            e.classList.add("focus:text-white");
-            e.classList.remove("focus:text-yellow-400");
-        } else {
-            x.classList.remove("block");
-            x.classList.add("hidden");
-            y.classList.add("block");
-            y.classList.remove("hidden");
-            e.classList.remove("focus:text-white");
-            e.classList.add("focus:text-yellow-400");
-        }
-    }
+<script type="text/javascript" src="/js/dropdown.js">
 </script>

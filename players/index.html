@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<style>
+            /* Tab content - closed */
+            .tab-content {
+            max-height: 0;
+            -webkit-transition: max-height .35s;
+            -o-transition: max-height .35s;
+            transition: max-height .35s;
+            }
+            /* :checked - resize to full height */
+            .tab input:checked ~ .tab-content {
+            max-height: 100vh;
+            }
+            /* Label formatting when open */
+            .tab input:checked + label{
+            /*@apply text-xl p-5 border-l-2 border-yellow-400 bg-yellow-400 text-black*/
+            font-size: 1.25rem; /*.text-xl*/
+            padding: 1.25rem; /*.p-5*/
+            border-left-width: 2px; /*.border-l-2*/
+            border-color: #f6e05e; /*.border-yellow-400*/
+            background-color: #f6e05e; /*.bg-yellow-400 */
+            color: #000000; /*.text-black*/
+            }
+            /* Icon */
+            .tab label::after {
+            float:right;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            line-height: 1.5;
+            font-size: 1.25rem;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+            }
+            /* Icon formatting - closed */
+            .tab input[type=checkbox] + label::after {
+            content: "+";
+            font-weight:bold; /*.font-bold*/
+            border-width: 1px; /*.border*/
+            border-radius: 9999px; /*.rounded-full */
+            border-color: #f6e05e; /*.border-yellow-4000*/
+            }
+            .tab input[type=radio] + label::after {
+            content: "\25BE";
+            font-weight:bold; /*.font-bold*/
+            border-width: 1px; /*.border*/
+            border-radius: 9999px; /*.rounded-full */
+            border-color: #f6e05e; /*.border-grey*/
+            }
+            /* Icon formatting - open */
+            .tab input[type=checkbox]:checked + label::after {
+            transform: rotate(315deg);
+            background-color: #f6e05e; /*.bg-yellow-400*/
+            color: #f8fafc; /*.text-grey-lightest*/
+            }
+            .tab input[type=radio]:checked + label::after {
+            transform: rotateX(180deg);
+            background-color: #f6e05e; /*.bg-yellow-400*/
+            color: #f8fafc; /*.text-grey-lightest*/
+            }
+         </style>-->
+         
+        <meta charset="UTF-8">
+
+        <title>EAYBL</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        
+    </head>
+   
+    <body class="bg-yellow-400" > 
+        
+        <div class="bg-yellow-400">
+            <!-- Background  -->
+
+            <nav class= " sticky top-0 bg-black px-6 py-4 shadow-lg">
+
+                <!-- Navbar appearance -->
+
+                <div class="flex items-center justify-between">
+
+                    <a href="../index.html"><img src="../img/FullSizeRender.jpg" alt="EAYBL Logo" style="width:50px;height:50px;"> </a>
+                    
+                    <button type="button" onclick="sideBar(this)" class="block text-white hover:text-yellow-400 focus:text-white focus:outline-none lg:hidden">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </button>
+                    <!-- Navbar when the screen is big -->
+
+                    <div class="hidden lg:flex items-center text-lg text-white h-full">
+                        <a href="../rules/" class="px-6 hover:text-yellow-400 rounded py-1">League Rules</a>
+                        <a href="../schedule/" class="px-6 hover:text-yellow-400 rounded py-1">Season Schedule</a>
+                        <a href="../gallery/" class="px-6 hover:text-yellow-400 rounded py-1">Photo Gallery</a>
+                        <a href="../statistics/" class="px-6 hover:text-yellow-400 rounded py-1">EAYBL Stats</a>
+                        <a href="../players/" class="px-6 hover:text-yellow-400 rounded py-1">Player Profiles</a>
+                        <a href="../contact/" class="px-6 hover:text-yellow-400 rounded py-1">Contact Us</a>
+                    </div>
+
+                </div>
+
+                <!-- Navbar when screen is small -->
+                <span class="flex flex-col justify-end absolute text-lg text-white p-3 bg-black shadow-lg hidden" id="sidenav">
+                    <a href="../rules/" class="px-2 py-1 hover:bg-yellow-400">League Rules</a>
+                    <a href="../schedule/" class="px-2 py-1 hover:bg-yellow-400">Season Schedule</a>
+                    <a href="../gallery/" class="px-2 py-1 hover:bg-yellow-400">Photo Gallery</a>
+                    <a href="../statistics/" class="px-2 py-1 hover:bg-yellow-400">EAYBL Stats</a>
+                    <a href="../players/" class="px-2 py-1 hover:bg-yellow-400">Player Profiles</a>
+                    <a href="../contact/" class="px-2 py-1 font-bold hover:bg-yellow-400">Contact Us</a>
+                </span>
+            </nav>
+
+
+        <div class="w-full md:w-3/5 mx-auto p-8">
+            <!-- Menu of where all the teams are -->
+            <h1 class="font-sans text-3xl text-black text-center p-5 ">EAYBL Teams and Players</h1>
+            <div class="shadow-md">
+               <div class="tab w-full overflow-hidden border-t">
+                  <input class="absolute opacity-0" id="tab-single-one" type="radio" name="tabs2">
+                  <!-- Team One -->
+                  <label class="block p-5 leading-normal cursor-pointer" for="tab-single-one">Team One (Team Issa)</label>
+                  <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+                     <p class="px-5 py-3 text-xl">Davion </p>
+                        <ul class="list-disc text-lg list-inside px-5 py-2">
+                           <li>Strength: vision, ball handling, high IQ player makes teammates better</li>
+                           <li>Weakness: shooting, too unselfish at times</li>
+                           <li>Comparison: Rajon Rondo</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Ahmed Bahsane</p>
+                        <ul class="list-disc text-lg list-inside px-5 py-2">
+                           <li>Strength: handle, 3 level scoring, lightning quickness. Ability to take over a game</li>
+                           <li>Weakness: assertiveness, size</li>
+                           <li>Comparison: Kemba Walker</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Kobe Musse</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strength: midrange specialist. Floater. Can take over game with his energy. Game changer when locked in</li>
+                           <li>Weakness: prefers individual success over team success. Can be too ball dominant. </li>
+                           <li>Comparison: Andre Miller</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Liban Haye</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Rebounding, put-backs. Lengthy player who can alter shots at the rim.</li>
+                           <li>Weaknesses: Athleticism, plays out of position too much. Decision making  </li>
+                           <li>Comparison: Javale McGee</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Munir</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strength: shooting, ball handling, play making.</li>
+                           <li>Weakness: speed, effort, turnovers.</li>
+                           <li>Comparison: Evan Fournier</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Don C</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li> Strength: Consistent Shooter with range, excellent help defender great instincts to alter shots. </li>
+                           <li>Weakness: lacks speed to make impact on ball defense. Playmaking</li>
+                           <li>Comparison: JaMychal Green</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Abdullahi M</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strength: excellent scorer and ball handler with great touch around the rim. Creates shot on all defenders.</li>
+                           <li>Weakness: facilitating, production off ball.</li>
+                           <li> Comparison: Lou Williams</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Abdullahi Issa</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Excellent shooter with ability to catch fire from deep. Strength and size to finish through any contact. </li>
+                           <li>Weaknesses: Facilitating, effort, athleticism</li>
+                           <li>Comparison: Buddy Hield</li>
+                        </ul>
+
+                        
+
+                  </div>
+               </div>
+               <div class="tab w-full overflow-hidden border-t">
+                  <input class="absolute opacity-0" id="tab-single-two" type="radio" name="tabs2">
+                  <!-- Team Two -->
+                  <label class="block p-5 leading-normal cursor-pointer" for="tab-single-two">Team Two (Team Noona)</label>
+                  <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+
+                        <p class="px-5 py-3 text-xl">Abdirahman 1Take</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Defensive minded guard with ability to shoot from 3. Do-it-all kind of player.</li>
+                           <li>Weaknesses: Ball handling/Shot selection</li>
+                           <li>Comparison: Terry Rozier</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Abdimalik</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: excellent shooter from the perimeter. Crafty finisher around rim.</li>
+                           <li>Weaknesses: Defense, speed</li>
+                           <li>Comparison: Duncan Robinson</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Turjuman</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: athletic guard. Physical on the glass and finishes thru contact.</li>
+                           <li>Weaknesses: shooting, decision making, temper </li>
+                           <li>Comparison: Jerami Grant</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Kyro</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: lights out shooter with unlimited range. High energy player who can catch fire quick.</li>
+                           <li>Weaknesses: playmaking, defense</li>
+                           <li>Comparison: Jason Terry</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Andy</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: lock down defender who can guard multiple positions. Strong enough to punish defenders in post.</li>
+                           <li>Weaknesses: Shooting ,decision making</li>
+                           <li>Comparison: Jason Terry</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Noona</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: High IQ player versatile. Floor general.</li>
+                           <li>Weaknesses: Stamina, ball handling, 3pt shooting</li>
+                           <li>Comparison: Nikola Jokic</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Abdullahi KD</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Scoring on all levels. Height and skill set make him one of the toughest players to guard. Rebounding</li>
+                           <li>Weaknesses: Defense, not assertive enough.</li>
+                           <li>Comparison: Andrew Wiggins</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Abdikarim (Fulan)</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Rebounding. Constantly active on the glass. Freak athletcism, can finish on any defender. Unstoppable when going downhill</li>
+                           <li>Weaknesses: Defense, ball handling/decision making.</li>
+                           <li>Comparison: Montrezl Harrell</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Kamal Mursal</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: shooting, slashing. Crafty finisher with great potential.</li>
+                           <li>Weaknesses: Confidence, puts individual success over team success. Lacks speed</li>
+                           <li>Comparison: Jayson Tatum</li>
+                        </ul>
+
+                  </div>
+               </div>
+               <div class="tab w-full overflow-hidden border-t">
+                  <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">
+                  <!-- Team Three -->
+                  <label class="block p-5 leading-normal cursor-pointer" for="tab-single-three">Team Three (Team Ismail)</label>
+                  <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+                     <p class="px-5 py-3 text-xl">Hanad</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: All around talent, scoring/rebounding/handle. Fills the stat sheet.</li>
+                           <li>Weaknesses: Decision making, defense</li>
+                           <li>Comparison: Lamar Odom</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Mohamed Ali</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: insane handles, layup maestro. Great team player. Clutch.</li>
+                           <li>Weaknesses: Can go long stretches in a game without impact.</li>
+                           <li>Comparison: Joe Johnson</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Ismail Bahsane</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Speed/Aggression. Lock down defender who can go coast to coast. Effort/energy</li>
+                           <li>Weaknesses: Erratic at times, not a team player at times. Right hand.</li>
+                           <li>Comparison: Russell Westbrook</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Harun Ahmed</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Shooting, leadership. ability to hit big shots</li>
+                           <li>Weaknesses: lacks speed, can go stretches without an impact. </li>
+                           <li>Comparison: Dion Waiters</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Abdul (Big Drip)</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Lengthy, excellent 3&D player, can catch fire quick and fill stat sheet</li>
+                           <li>Weaknesses: can go stretches without impacting the game. Shot selection.</li>
+                           <li>Comparison: Nicolas Batum</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Ismail (Dripish)</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Lights-out shooter, smooth finisher around rim.</li>
+                           <li>Weaknesses: Defense, playmaking</li>
+                           <li>Comparison: Joe Harris</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Hashim (The Dream)</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Lights out shooter, corner specialist. Great teammate</li>
+                           <li>Weaknesses: Lacks size to guard bigger players.</li>
+                           <li>Comparison: JJ Redick</li>
+                        </ul>
+                     
+                     <p class="px-5 py-3 text-xl">Alawi</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Shooting. Floater. Leadership</li>
+                           <li>Weaknesses: Athleticism, play making ability</li>
+                           <li>Comparison: Omari Spellman</li>
+                        </ul>
+
+                  </div>
+               </div>
+               <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-four" type="radio" name="tabs2">
+                <!-- Team Four -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-four">Team Four (Team GVO)</label>
+                <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+                  
+                  <p class="px-5 py-3 text-xl">Mahdi</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Deadly from 3. Can catch fire against any defense. Great team player.</li>
+                           <li>Weaknesses: Ball handling, finishing in traffic</li>
+                           <li>Comparison: Kyle Korver</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Lil Awal</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Lengthy defender who can guard all positions. Finishes well in transition.</li>
+                           <li>Weaknesses: Plays outside his role/position too often. Turnovers</li>
+                           <li>Comparison: Trevor Ariza</li>
+                        </ul>
+
+
+                     <p class="px-5 py-3 text-xl">Mohamed (Lil Mo)</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Lengthy defender who can guard all positions. Finishes well in transition.</li>
+                           <li>Weaknesses: Struggles to create shots for himself. Disappears at times</li>
+                           <li>Comparison: Danny Green</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Emir</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Athleticism, defense. Underrated passer makes good decisions with the ball.</li>
+                           <li>Weaknesses: Shooting, confidence</li>
+                           <li>Comparison: Avery Bradley</li>
+                        </ul>
+
+                        <p class="px-5 py-3 text-xl">Abdinasir Curry</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Shooting, great role player who can space the floor and hit big shots.</li>
+                           <li>Weaknesses: Speed, defense, playmaking.</li>
+                           <li>Comparison: Troy Daniels</li>
+                        </ul>
+
+
+                     <p class="px-5 py-3 text-xl">Hamza (GVO)</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Intense defender who gives ultimate effort for teammates. Turns defense to offense, great in transition</li>
+                           <li>Weaknesses: Shooting, ball handling.</li>
+                           <li>Comparison: Elfrid Payton</li>
+                        </ul>
+
+                     <p class="px-5 py-3 text-xl">Big Zak</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Size/Strength to punish defenders.</li>
+                           <li>Weaknesses: Stamina, Playmaking</li>
+                           <li>Comparison: DeJuan Blair</li>
+                        </ul>
+                     
+                     <p class="px-5 py-3 text-xl">Mussa Adam</p>
+                        <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                           <li>Strengths: Big strong body dominant in the paint. Can stretch the floor and shoot. Shuts down paint defensively. #1 overall pick!!</li>
+                           <li>Weaknesses: Too unselfish, sometimes fails to play to his potential</li>
+                           <li>Comparison: Karl-Anthony Towns</li>
+                        </ul>
+
+                </div>
+             </div>
+
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-five" type="radio" name="tabs2">
+                <!-- Team Five -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-five">Team Five (Team 2Times)</label>
+                <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+                  <p class="px-5 py-3 text-xl">Yusuf (YuDrip)</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: Versatile big man who can shoot the 3 and work down low.</li>
+                        <li>Weaknesses: Defense, play making</li>
+                        <li>Comparison: Nemanja Bjelica</li>
+                     </ul>
+
+                  <p class="px-5 py-3 text-xl">Mohamed 2-Times</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: Pesky defender, pickpocket specialist. Midrange/3pt specialist. Leadership</li>
+                        <li>Weaknesses: Athleticism, handle, finishing in traffic</li>
+                        <li>Comparison: Patty Mills</li>
+                     </ul>
+
+                  <p class="px-5 py-3 text-xl">Abdirahman (Superman)</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: Crafty finishing around the rim. Lengthy player who impacts game athletically (blocking shots, steals). Speed.</li>
+                        <li>Weaknesses: On ball defense, streaky shooter.</li>
+                        <li>Comparison: Will Barton</li>
+                     </ul>
+
+                  <p class="px-5 py-3 text-xl">Lil East</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: Physical guard who uses his athleticism to dominate. Quick first step.</li>
+                        <li>Weaknesses: Shooting, erratic decision making</li>
+                        <li>Comparison: Collin Sexton</li>
+                     </ul>
+
+                  <p class="px-5 py-3 text-xl">Farah</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: Big man who can shoot, rebound and defend. High IQ</li>
+                        <li>Weaknesses: Athleticism, play making</li>
+                        <li>Comparison: Joe Ingles</li>
+                     </ul>
+
+                  <p class="px-5 py-3 text-xl">AJ</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: Athleticism, rebounding, defense</li>
+                        <li>Weaknesses: Poor decision making, plays out of position, shooting/handle</li>
+                        <li>Comparison: Richaun Holmes</li>
+                     </ul>
+
+                   <p class="px-5 py-3 text-xl">Bashir</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: high IQ guard who can light it up from 3. Crafty finishing around hoop</li>
+                        <li>Weaknesses: Speed, defense, not assertive</li>
+                        <li>Comparison: Fred VanVleet</li>
+                     </ul>
+
+                  <p class="px-5 py-3 text-xl">KK</p>
+                     <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                        <li>Strengths: Handle, shooting, finishes nicely around the rim. Floor general high IQ player.</li>
+                        <li>Weaknesses: Assertiveness, can disappear at times.</li>
+                        <li>Comparison: Mike Conley</li>
+                     </ul>
+
+                </div>
+             </div>
+
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-six" type="radio" name="tabs2">
+                <!-- Team Six -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-six">Team Six (Team Shane)</label>
+                <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+
+                  <p class="px-5 py-3 text-xl">Abdullahi Shane</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Limitless range from 3, heats up quickly, rebounding, defense, effort and passing.</li>
+                     <li>Weaknesses: Decision making, shot selection, leadership on court</li>
+                     <li>Comparison: Khris Middleton</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Quan</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Handle. Crafty finisher around the rim, can finish with contact. Potential to take over games with scoring.</li>
+                     <li>Weaknesses: Shooting, turnovers.</li>
+                     <li>Comparison: Shai Gilgeous-Alexander</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Abdirisaq Shane</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Lockdown perimeter defender, high IQ, leader</li>
+                     <li>Weaknesses: Shooting, playmaking</li>
+                     <li>Comparison: Patrick Beverley</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Qas</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Shooting, rebounding, defense</li>
+                     <li>Weaknesses: Poor shot selection, athleticism</li>
+                     <li>Comparison: Domantas Sabonis</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Fahim</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Elusive guard, physical, finishes around rim with ease despite size</li>
+                     <li>Weaknesses: Decision making, at times prefers individual success over team</li>
+                     <li>Comparison: Eric Bledsoe</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Abdirashid Sharif</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Unorthodox player can get shot off on any defender. Great touch around rim/midrange.</li>
+                     <li>Weaknesses: Defense, shot selection</li>
+                     <li>Comparison: Alfonzo McKinnie</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Lil Abdirizaq</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Lengthy player who can snag rebounds and finish smooth around the rim. </li>
+                     <li>Weaknesses: Shooting, confidence</li>
+                     <li>Comparison: Harry Giles III</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Omar Omar</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Rebounding, defense, midrange game.</li>
+                     <li>Weakness: Creating offense for himself, 3pt shooting.</li>
+                     <li>Comparison: Kyle O'Quinn</li>
+                  </ul>
+                  
+
+                </div>
+             </div>
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-seven" type="radio" name="tabs2">
+                <!-- Team Seven -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-seven">Team Seven (Team Suri)</label>
+                <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+
+                  <p class="px-5 py-3 text-xl">Suriyaan</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Passing, speed, defense. Can change the game w athleticism. Great potential as a playmaker</li>
+                     <li>Weaknesses: Streaky shooting, handle</li>
+                     <li>Comparison: Kelly Oubre Jr.</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Hamse Barkhadle</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Can score on all levels. Physical offensively despite size. Ability to take over game</li>
+                     <li>Weaknesses: Leadership, facilitating</li>
+                     <li>Comparison: Jamal Murray</li>
+                  </ul>
+                  
+                  <p class="px-5 py-3 text-xl">Kibru</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Shooting, handle, Finishing around rim. Explosive player with great scoring ability.</li>
+                     <li>Weaknesses: Defense, facilitating</li>
+                     <li>Comparison: CJ McCollum</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Salman Hussein</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Athletic player who’s strong enough to finish through any contact. Great rebounder/defender</li>
+                     <li>Weaknesses: Plays outside of role too often. Shooting/shot selection</li>
+                     <li>Comparison: Dwight Powell</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Zak</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Great rebounding instincts. Finishes well around rim, makes right decisions</li>
+                     <li>Weaknesses: Creating shot for himself. Streaky shooting, ball handling.</li>
+                     <li>Comparison: Al Farouq Aminu</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Amin</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Rebounding, slashing, physical player with an explosive first step</li>
+                     <li>Weaknesses: Shooting, playmaking</li>
+                     <li>Comparison: Josh Hart </li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Ahmed Abdi</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Lengthy player excellent at rebounding/put backs. Can stretch floor with his 3pt shooting.</li>
+                     <li>Weaknesses:Lacks athleticism to consistently make difference on both ends. </li>
+                     <li>Comparison: Brook Lopez</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Guled</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Rebounding, shooting</li>
+                     <li>Weaknesses: Speed and athleticism </li>
+                     <li>Comparison: Kelly Olynyk</li>
+                  </ul>
+
+                </div>
+             </div>
+             <div class="tab w-full overflow-hidden border-t">
+                <input class="absolute opacity-0" id="tab-single-eight" type="radio" name="tabs2">
+                <!-- Team Eight -->
+                <label class="block p-5 leading-normal cursor-pointer" for="tab-single-eight">Team Eight (Team Khalid)</label>
+                <div class="tab-content overflow-auto border-l-2 bg-gray-100 border-black leading-normal">
+                  
+                  <p class="px-5 py-3 text-xl">Khalid Issa</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Versatile guard who can shoot lights out. Crafty finisher around the rim, and big in the clutch.</li>
+                     <li>Weaknesses: Temper, defense, shot selection</li>
+                     <li>Comparison: Manu Ginobili</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Hashim Ali</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: High energy guard who can do it all. Shoot, rebound, penetrate.</li>
+                     <li>Weaknesses: Streaky shot, bad decision making</li>
+                     <li>Comparison: Cam Reddish</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">GMU Jasper</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Strong guard with excellent passing, defense, rebounding.</li>
+                     <li>Weaknesses: Shooting, stamina</li>
+                     <li>Comparison: Draymond Green</li>
+                  </ul>
+
+
+                  <p class="px-5 py-3 text-xl">Jabir</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Shooting. Can score in bunches, lengthy and great in transition.</li>
+                     <li>Weaknesses: struggles against physical defenders, defensive liability.</li>
+                     <li>Comparison: Zach Lavine</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Liban Ahmed (Leo)</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Great catch and shoot player, smooth release. Can punish smaller defenders in post.</li>
+                     <li>Weaknesses: Athleticism, ball handling</li>
+                     <li>Comparison: Danilo Gallanari</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Yasin</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Physical guard who can shoot from 3 and get to the rim with ease. Team player</li>
+                     <li>Weaknesses: Disappears at times, streaky shot</li>
+                     <li>Comparison: Bogdan Bogdanovic</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Darman</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Excellent shooter. Quick first step. Can finish around rim on anyone</li>
+                     <li>Weaknesses: Defense, facilitating</li>
+                     <li>Comparison: Jimmer Freddette</li>
+                  </ul>
+
+                  <p class="px-5 py-3 text-xl">Abdullahi Ismail</p>
+                  <ul class="list-disc list-inside text-lg list-inside px-5 py-2 text-left">
+                     <li>Strengths: Lockdown defender, athletic. Pickpocket can take any steal coast to coast.</li>
+                     <li>Weaknesses: Shooting, shot selection, IQ</li>
+                     <li>Comparison: Andre Roberson</li>
+                  </ul>
+
+
+
+                   
+                </div>
+             </div>
+            </div>
+         </div>
+
+
+    </div>
+
+    </body>
+</html>
+<script type="text/javascript" src="../js/dropdown.js"></script>
+<script type="text/javascript">
+    var myRadios = document.getElementsByName('tabs2');
+      var setCheck;
+      var x = 0;
+      for(x = 0; x < myRadios.length; x++){
+          myRadios[x].onclick = function(){
+              if(setCheck != this){
+                   setCheck = this;
+              }else{
+                  this.checked = false;
+                  setCheck = null;
+          }
+          };
+      }
+</script>
