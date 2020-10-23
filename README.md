@@ -1,2 +1,2 @@
 # The Website for the East African Youth Basketball League
-## Obada,Ahmed,Mohamed,Abdullahi
+## Obada Alagha, Ahmed Damanhoury, Mohamed Mohamed, Abdullahi Mohamed
